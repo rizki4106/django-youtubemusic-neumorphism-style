@@ -1,0 +1,16 @@
+{% extends 'root.html' %}
+
+{% block content %}
+    <div class="cover-input">
+        <div id='input-form'>
+            <form action='result/' method='POST' class="form-url">
+                {% csrf_token %}
+                <input required id='url' autofocus type="url" name='url' placeholder="masukan url video youtube"/>
+                <button type='submit' class="btn-submit">Download <i class='fa fa-arrow-right' style='margin-left: 5%'></i></button>
+            </form>
+        </div>
+    </div>
+    <script>
+        home();
+    </script>
+{% endblock content %}

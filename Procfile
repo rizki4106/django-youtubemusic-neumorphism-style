@@ -1,0 +1,1 @@
+web: gunicorn youtubemusic.wsgi --log-file -

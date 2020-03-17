@@ -1,0 +1,51 @@
+{% extends '../root.html' %}
+{% block content %}
+
+    <div class="container-result">
+        <div id='content-container'>
+            <div class="cover-img">
+                <div id='cover-rounded'>
+                    <img src={{data.poster}} alt='music' class='spin-img'/>
+                </div>
+            </div>
+
+            <!-- keterangan musik -->
+            <h3 class='text-center'>{{data.judul}}</h3>
+            <!-- akhir keterangan musik -->
+
+            <!-- audio controller -->
+            <div class="audio-controller">
+                <div id='seek-section'>
+                    <span class='times'>00</span>
+                    :
+                    <span class='times'>00</span>
+                    <input id='range' type="range" value="0" step="1" max="100"/>
+                    <audio id='audio'>
+                        <!-- audio source -->
+                        <source src={{data.file}} type='audio/mp3' id='source'/>
+                        <!-- end of audio source -->
+                    </audio>
+                    <span class='times'>00</span>
+                    :
+                    <span class='times'>00</span>
+                </div>
+
+                <div id='button-bar'>
+                    <button type='button' class="btn-control"><i class="fas fa-backward"></i></button>
+                    <button type='button' class='btn-control c-main'><i id='icon-m' class='fa fa-play'></i></button>
+                    <button type='button' class="btn-control"><i class="fas fa-forward"></i></button>
+                </div>
+                <a href='#' class="link-download" download>
+                    <button type='button' class="btn-download">DOWNLOAD <i class='fa fa-download'></i></button>
+                </a>
+
+            </div>
+            <!-- end of audio controller -->
+
+        </div>
+    </div>
+    <script>
+        result();
+    </script>
+
+{% endblock content %}
