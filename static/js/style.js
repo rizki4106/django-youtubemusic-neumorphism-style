@@ -28,6 +28,15 @@ function result()
 
     // function control
 
+    const audio = document.querySelector('#audio');
+    const btnM = document.querySelector('.c-main');
+    const iconM = document.querySelector('#icon-m');
+    const img = document.querySelector('.spin-img');
+    const src = document.querySelector('#source');
+    const link = document.querySelector('.link-download')
+    const range = document.querySelector('#range');
+    const times = document.querySelectorAll('.times');
+
     function berhenti()
     {
         audio.pause()
@@ -43,14 +52,6 @@ function result()
     }
 
     // audio controller 
-    const audio = document.querySelector('#audio');
-    const btnM = document.querySelector('.c-main');
-    const iconM = document.querySelector('#icon-m');
-    const img = document.querySelector('.spin-img');
-    const src = document.querySelector('#source');
-    const link = document.querySelector('.link-download')
-    const range = document.querySelector('#range');
-    const times = document.querySelectorAll('.times');
 
     setTimeout(() => {
         link.setAttribute('href', src.getAttribute('src'));
@@ -59,9 +60,13 @@ function result()
     btnM.addEventListener('click', () => {
         if(audio.paused === true)
         {
-            main()
+            audio.play()
+            iconM.setAttribute('class', 'fa fa-pause');
+            img.classList.add('rotate-image');
         }else{
-            berhenti()
+            audio.pause()
+            iconM.setAttribute('class', 'fa fa-play');
+            img.classList.remove('rotate-image');
         }
     });
     
@@ -85,8 +90,6 @@ function result()
         if(nilai >= 99)
         {
             berhenti()
-        }else{
-            main()
         }
     });
 
